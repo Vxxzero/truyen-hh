@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff">
+<title>TRUYỆN H - Đọc truyện chữ</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">🪶 TRUYỆN <b>H</b></a>
+  <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+</header>
+<nav class="menu" id="menu">
+  <a href="#home">Trang chủ</a><a href="#saved">Truyện đã lưu</a><a href="#history">Lịch sử</a>
+  <a href="#genres">Thể loại</a><button id="authOpen">Đăng nhập / Đăng ký</button>
+</nav>
+<main id="home" class="wrap">
+  <section class="panel">
+    <div class="quick-grid">
+      <button data-protagonist="Nam chính">👨 Nam chính</button>
+      <button data-protagonist="Nữ chính">👩 Nữ chính</button>
+      <button id="savedBtn">❤️ Truyện đã lưu</button>
+      <button id="historyBtn">🕒 Lịch sử</button>
+      <button id="genreBtn">📚 Thể loại</button>
+      <button class="red" data-sort="hot">🏆 BXH Tổng</button>
+      <button class="red" data-sort="hot">🔥 BXH Tuần</button>
+      <button class="red" data-sort="hot">⭐ BXH Tháng</button>
+      <button id="allBtn">Tất cả truyện</button>
+    </div>
+  </section>
+  <section class="panel">
+    <button class="login-cta" id="loginCta">Đăng nhập để lưu truyện</button>
+    <input id="search" class="search" placeholder="🔍 Tìm tên truyện, tác giả..." autocomplete="off">
+  </section>
+  <section class="panel" id="genres">
+    <h2>Bộ lọc nâng cao</h2>
+    <label>Chọn thể loại</label>
+    <select id="genreSelect" multiple size="4">
+      <option>Tiên hiệp</option><option>Tu tiên</option><option>Huyền huyễn</option>
+      <option>Đô thị</option><option>Ngôn tình</option><option>Trọng sinh</option>
+      <option>Xuyên không</option><option>Kiếm hiệp</option><option>Hệ thống</option>
+    </select>
+    <label for="keyword">Từ khóa kết hợp</label>
+    <input id="keyword" class="search" placeholder="Ví dụ: NTR + tiên hiệp">
+    <div class="actions"><button id="filterBtn">Tìm truyện</button><button class="light" id="resetBtn">Đặt lại</button></div>
+    <small>Trên điện thoại, chạm để chọn nhiều thể loại.</small>
+  </section>
+  <section class="panel">
+    <div class="section-head"><h2 id="listTitle">Truyện mới cập nhật</h2><div class="tabs">
+      <button class="active" id="newTab">Mới</button><button id="hotTab">Đọc nhiều</button>
+    </div></div>
+    <div id="storyList"><p class="muted">Đang tải truyện...</p></div>
+  </section>
+</main>
+<footer>TRUYỆN H · Nền tảng đọc truyện chữ</footer>
+
+<div class="modal" id="authModal">
+ <div class="modal-card">
+  <button class="x" id="authClose">×</button>
+  <h2 id="authTitle">Đăng nhập</h2>
+  <div id="registerFields" hidden><input id="regName" placeholder="Tên hiển thị"></div>
+  <input id="authEmail" type="email" placeholder="Email">
+  <input id="authPassword" type="password" placeholder="Mật khẩu (ít nhất 8 ký tự)">
+  <button id="authSubmit">Đăng nhập</button>
+  <p class="muted" id="authSwitch">Chưa có tài khoản? <a href="#" id="switchMode">Đăng ký</a></p>
+  <p id="authMessage" class="message"></p>
+ </div>
+</div>
+
+<div class="reader" id="reader">
+ <div class="reader-bar"><button id="readerBack">← Danh sách</button><span id="readerCounter"></span></div>
+ <h1 id="readerTitle"></h1><h3 id="chapterTitle"></h3>
+ <article id="chapterText"></article>
+ <div class="reader-nav"><button id="prevChapter">← Chương trước</button><button id="nextChapter">Chương sau →</button></div>
+ <section class="comments"><h2>Bình luận</h2><div id="commentList"></div>
+  <textarea id="commentText" placeholder="Viết bình luận..." rows="3"></textarea>
+  <button id="commentSend">Gửi bình luận</button>
+ </section>
+</div>
+<script src="/app.js"></script>
+</body></html>
